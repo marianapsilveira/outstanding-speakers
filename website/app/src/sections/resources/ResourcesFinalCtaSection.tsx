@@ -4,7 +4,7 @@ import {
   getSequentialTypingDelay,
 } from '@/components/motion/TypewriterLabel'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
-import { pagePaddingX } from '@/constants/layout'
+import { pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
 import { speakersListingTopState } from '@/constants/speakersNavigation'
 import {
   eyebrowText,
@@ -35,9 +35,7 @@ export function ResourcesFinalCtaSection() {
       <div
         className={`
           relative z-10
-          flex w-full
-          items-start
-          justify-between
+          ${typewriterEyebrowRow}
           pt-[40px]
           ${pagePaddingX}
         `}

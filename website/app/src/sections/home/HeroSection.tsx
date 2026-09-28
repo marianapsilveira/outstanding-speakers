@@ -14,6 +14,7 @@ import {
 } from '@/constants/typography'
 
 const heroLabels = ['Swap Experts', 'Change Minds', 'End the Bias']
+const compactHeroLabels = ['Swap Experts', 'End the Bias']
 
 const easing = [0.22, 1, 0.36, 1] as const
 
@@ -46,68 +47,90 @@ export function HeroSection() {
       >
         <div
           className="
+            @container
             flex w-full flex-1
             -translate-y-[clamp(0rem,2vh,1.5rem)]
             flex-col justify-center
           "
         >
-          <div className="mx-auto w-full max-w-[1320px] text-center">
-            <motion.h1
-              initial={headlineInitial}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.45 }}
-              transition={{
-                duration: reducedMotion ? 0 : 0.95,
-                ease: easing,
-              }}
-              className={`
-                font-display
-                text-[clamp(1.375rem,calc((100vw-5rem)/11.6),10rem)]
-                leading-[1.1]
-                tracking-normal
-                ${fontDisplayRoman}
-                whitespace-nowrap
-                text-text-light
-              `}
+          <motion.h1
+            initial={headlineInitial}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.45 }}
+            transition={{
+              duration: reducedMotion ? 0 : 0.95,
+              ease: easing,
+            }}
+            aria-label="OUTstanding Speakers"
+            className={`
+              w-full
+              text-center
+              font-display
+              leading-[1.1]
+              tracking-normal
+              ${fontDisplayRoman}
+              text-text-light
+            `}
+          >
+            <span
+              className="
+                flex flex-col items-center
+                text-[clamp(2.75rem,calc(100cqw/5.85),8rem)]
+                @min-[44rem]:hidden
+              "
+            >
+              <span className="whitespace-nowrap">
+                <span className="text-lime">OUT</span>
+                standing
+              </span>
+              <span className="whitespace-nowrap">Speakers</span>
+            </span>
+
+            <span
+              className="
+                hidden whitespace-nowrap
+                text-[clamp(2.75rem,calc(100cqw/9.95),10rem)]
+                @min-[44rem]:inline
+              "
             >
               <span className="text-lime">OUT</span>
               standing Speakers
-            </motion.h1>
+            </span>
+          </motion.h1>
 
-            <motion.div
-              initial={copyInitial}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.4 }}
-              transition={{
-                duration: reducedMotion ? 0 : 0.85,
-                delay: reducedMotion ? 0 : 0.12,
-                ease: easing,
-              }}
-              className="mx-auto mt-[clamp(2.5rem,5vh,4rem)] max-w-[min(100%,62rem)] px-2"
-            >
-              <p className={`${supportingDescription} text-text-light/90`}>
-                An inter-company speaker exchange, connecting queer professionals
-                <br className="hidden lg:inline" />
-                {' '}
-                with employees and leaders across different organizations.
-              </p>
+          <motion.div
+            initial={copyInitial}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{
+              duration: reducedMotion ? 0 : 0.85,
+              delay: reducedMotion ? 0 : 0.12,
+              ease: easing,
+            }}
+            className="mx-auto mt-[clamp(2.5rem,5vh,4rem)] w-full max-w-[min(100%,62rem)] px-2 text-center"
+          >
+            <p className={`${supportingDescription} text-text-light/90`}>
+              An inter-company speaker exchange, connecting queer professionals
+              <br className="hidden lg:inline" />
+              {' '}
+              with employees and leaders across different organizations.
+            </p>
 
-              <div className="mt-[clamp(1.25rem,2.5vh,2.5rem)] flex justify-center">
-                <Button
-                  href="/speakers"
-                  linkState={speakersListingTopState}
-                  variant="ghost-light"
-                  size="lg"
-                  showArrow
-                >
-                  Explore Speakers
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+            <div className="mt-[clamp(1.25rem,2.5vh,2.5rem)] flex justify-center">
+              <Button
+                href="/speakers"
+                linkState={speakersListingTopState}
+                variant="ghost-light"
+                size="lg"
+                showArrow
+              >
+                Explore Speakers
+              </Button>
+            </div>
+          </motion.div>
         </div>
 
-        <div className="mt-auto hidden w-full items-end justify-between pt-12 sm:flex">
+        <div className="mt-auto hidden w-full items-end justify-between pt-12 md:flex">
           {heroLabels.map((label, index) => (
             <TypewriterLabel
               key={label}
@@ -125,18 +148,19 @@ export function HeroSection() {
           ))}
         </div>
 
-        <div className="mt-auto flex flex-col items-start gap-4 pt-10 sm:hidden">
-          {heroLabels.map((label, index) => (
+        <div className="mt-auto flex w-full items-end justify-between pt-10 md:hidden">
+          {compactHeroLabels.map((label, index) => (
             <TypewriterLabel
               key={label}
               delay={getSequentialTypingDelay(
-                heroLabels,
+                compactHeroLabels,
                 index,
                 mobileTypingSpeed,
                 mobileTypingGap,
               )}
               speed={mobileTypingSpeed}
-              className={`${eyebrowText} text-pink-section`}
+              nowrap
+              className={`${eyebrowText} shrink-0 text-pink-section`}
             >
               {label}
             </TypewriterLabel>

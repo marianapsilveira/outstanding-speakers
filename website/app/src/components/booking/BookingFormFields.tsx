@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 export const bookingControlClassName =
-  'w-full rounded-[12px] border border-[#D9D7E3] bg-white px-4 py-3 font-sans text-[14px] leading-[1.4] text-text-dark transition-colors duration-200 placeholder:text-secondary/60 focus:border-primary-violet focus:outline-none focus:ring-2 focus:ring-primary-violet/15 disabled:cursor-not-allowed disabled:bg-[#F7F7F8] disabled:text-secondary disabled:opacity-70'
+  'w-full min-w-0 max-w-full rounded-[12px] border border-[#D9D7E3] bg-white px-4 py-3 font-sans text-[16px] leading-[1.4] text-text-dark transition-colors duration-200 placeholder:text-secondary/60 focus:border-primary-violet focus:outline-none focus:ring-2 focus:ring-primary-violet/15 disabled:cursor-not-allowed disabled:bg-[#F7F7F8] disabled:text-secondary disabled:opacity-70'
 
 export const bookingLabelClassName =
   'mb-2 block font-sans text-[14px] font-medium leading-[1.3] text-text-dark'
@@ -43,7 +43,7 @@ export function BookingFieldShell({
       .join(' ') || undefined
 
   return (
-    <div className={className}>
+    <div className={`min-w-0 w-full ${className}`}>
       <label
         htmlFor={id}
         className={bookingLabelClassName}
@@ -60,7 +60,10 @@ export function BookingFieldShell({
         </p>
       )}
 
-      <div aria-describedby={describedBy}>
+      <div
+        className="min-w-0 max-w-full overflow-hidden"
+        aria-describedby={describedBy}
+      >
         {children}
       </div>
 
@@ -128,6 +131,11 @@ export function BookingTextInput({
         }
         className={`
           ${bookingControlClassName}
+          ${
+            type === 'date'
+              ? 'booking-date-input'
+              : ''
+          }
           ${
             error
               ? 'border-[#C62828] focus:border-[#C62828] focus:ring-[#C62828]/15'

@@ -1,6 +1,7 @@
 export const primaryNav = [
   { label: 'Speakers', href: '/speakers' },
   { label: 'Resources', href: '/resources' },
+  { label: 'FAQ', href: '/faq' },
 ] as const
 
 export const footerDiscover = [

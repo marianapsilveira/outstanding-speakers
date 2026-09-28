@@ -60,6 +60,9 @@ export function HomePage() {
               muted
               loop
               playsInline
+              preload="auto"
+              disablePictureInPicture
+              controls={false}
             >
               <source src={publicAsset('assets/home-hero.mp4')} type="video/mp4" />
             </video>

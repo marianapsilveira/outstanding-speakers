@@ -9,6 +9,7 @@ import { speakers } from '@/data/speakers'
 import {
   editorialContent,
   pagePaddingX,
+  typewriterEyebrowRow,
 } from '@/constants/layout'
 import { eyebrowText } from '@/constants/typography'
 import {
@@ -253,9 +254,7 @@ export function SpeakersGridSection() {
       <div
         className={`
           relative z-20
-          flex w-full
-          items-start
-          justify-between
+          ${typewriterEyebrowRow}
           ${pagePaddingX}
         `}
       >
@@ -404,6 +403,7 @@ export function SpeakersGridSection() {
                     speaker={speaker}
                     interactive
                     animate={false}
+                    showViewProfile={false}
                   />
                 ),
               )}

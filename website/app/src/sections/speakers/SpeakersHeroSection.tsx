@@ -35,6 +35,9 @@ export function SpeakersHeroSection() {
           muted
           loop
           playsInline
+          preload="auto"
+          disablePictureInPicture
+          controls={false}
         >
           <source src={publicAsset('assets/speakers-hero.mp4')} type="video/mp4" />
         </video>

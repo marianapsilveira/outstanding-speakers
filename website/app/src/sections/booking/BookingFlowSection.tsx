@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ArrowIcon } from '@/components/ui/ArrowIcon'
 import { BookingProgress } from '@/components/booking/BookingProgress'
@@ -69,6 +69,33 @@ export function BookingFlowSection({
     () => getTodayIsoDate(),
     [],
   )
+
+  const stepPanelRef = useRef<HTMLDivElement>(null)
+  const hasMountedStep = useRef(false)
+
+  useEffect(() => {
+    if (!hasMountedStep.current) {
+      hasMountedStep.current = true
+      return
+    }
+
+    const panel = stepPanelRef.current
+
+    if (!panel) {
+      return
+    }
+
+    const headerOffset = 128
+    const nextTop =
+      panel.getBoundingClientRect().top +
+      window.scrollY -
+      headerOffset
+
+    window.scrollTo({
+      top: Math.max(0, nextTop),
+      behavior: 'smooth',
+    })
+  }, [currentStep])
 
   const handleChange = useCallback(
     (
@@ -258,8 +285,10 @@ export function BookingFlowSection({
           />
 
           <div
+            ref={stepPanelRef}
             className="
               min-w-0
+              overflow-x-hidden
               rounded-[12px]
               border border-[#D9D7E3]
               bg-white

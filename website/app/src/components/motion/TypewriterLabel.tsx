@@ -7,6 +7,7 @@ type TypewriterLabelProps = {
   delay?: number
   speed?: number
   once?: boolean
+  nowrap?: boolean
 }
 
 export function getSequentialTypingDelay(
@@ -30,6 +31,7 @@ export function TypewriterLabel({
   delay = 0,
   speed = 32,
   once = true,
+  nowrap = false,
 }: TypewriterLabelProps) {
   const triggerRef = useRef<HTMLSpanElement>(null)
 
@@ -89,21 +91,27 @@ export function TypewriterLabel({
   }, [children, delay, isInView, once, speed])
 
   const visibleText = children.slice(0, visibleCharacters)
+  const wrapClass = nowrap
+    ? 'whitespace-nowrap'
+    : 'whitespace-normal md:whitespace-nowrap'
 
   return (
     <span
       ref={triggerRef}
-      className={`relative inline-block ${className}`}
+      className={`relative inline-block max-w-full ${className}`}
       aria-label={children}
     >
       {/* Reserves the final dimensions so the layout does not move */}
-      <span className="invisible" aria-hidden="true">
+      <span
+        className={`invisible ${wrapClass}`}
+        aria-hidden="true"
+      >
         {children}
       </span>
 
       {/* Visible typing layer */}
       <span
-        className="absolute inset-0 block whitespace-nowrap"
+        className={`absolute inset-0 block ${wrapClass}`}
         aria-hidden="true"
       >
         {visibleText}

@@ -59,6 +59,41 @@
     -moz-osx-font-smoothing: auto;
   }
 
+  video::-webkit-media-controls,
+  video::-webkit-media-controls-start-playback-button,
+  video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    appearance: none;
+    -webkit-appearance: none;
+    opacity: 0 !important;
+    pointer-events: none;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .booking-date-input {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .booking-date-input::-webkit-datetime-edit,
+  .booking-date-input::-webkit-datetime-edit-fields-wrapper,
+  .booking-date-input::-webkit-datetime-edit-text,
+  .booking-date-input::-webkit-datetime-edit-month-field,
+  .booking-date-input::-webkit-datetime-edit-day-field,
+  .booking-date-input::-webkit-datetime-edit-year-field {
+    min-width: 0;
+    padding: 0;
+  }
+
+  .booking-date-input::-webkit-calendar-picker-indicator {
+    margin-left: 0.25rem;
+    flex-shrink: 0;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;

@@ -4,7 +4,7 @@ import {
   getSequentialTypingDelay,
 } from '@/components/motion/TypewriterLabel'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
-import { pagePaddingX } from '@/constants/layout'
+import { pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
 import { eyebrowText } from '@/constants/typography'
 
 const sectionLabels = [
@@ -49,9 +49,7 @@ export function ResourcesSection() {
       <div
         className={`
           relative z-20
-          flex w-full
-          items-start
-          justify-between
+          ${typewriterEyebrowRow}
           pt-[40px]
           ${pagePaddingX}
         `}

@@ -347,8 +347,8 @@ export const speakers: Speaker[] = [
   },
 
   /*
-   * The following seven profiles temporarily reuse existing images.
-   * Replace each path when dedicated photography becomes available.
+   * The following profiles use distinct Unsplash portraits as
+   * licensed placeholders, not photographs of the named people.
    */
 
   {
@@ -390,7 +390,7 @@ export const speakers: Speaker[] = [
         role: 'Regional Lead, Forma',
       },
     ],
-    image: publicAsset('/assets/speakers/amara-okonkwo.jpg'),
+    image: publicAsset('/assets/speakers/aisha-rahman.jpg'),
   },
   {
     id: 'mateo-alvarez',
@@ -431,7 +431,7 @@ export const speakers: Speaker[] = [
         role: 'Operations Director, Norte',
       },
     ],
-    image: publicAsset('/assets/speakers/elias-fontaine.jpg'),
+    image: publicAsset('/assets/speakers/mateo-alvarez.jpg'),
   },
   {
     id: 'nia-williams',
@@ -472,48 +472,7 @@ export const speakers: Speaker[] = [
         role: 'HR Lead, Avance',
       },
     ],
-    image: publicAsset('/assets/speakers/rosa-iglesias.jpg'),
-  },
-  {
-    id: 'mika-korhonen',
-    name: 'Mika Korhonen',
-    pronouns: 'they/them',
-    roleLine: 'Service Design Lead (Northline)',
-    location: 'Helsinki, Finland',
-    timezone: 'EEST',
-    languages: ['Finnish', 'Swedish', 'English'],
-    quote:
-      'Sometimes inclusion is simply being given enough time to answer in your own way.',
-    storyOverview: [
-      'Mika explores how workplace rhythms, meetings and communication norms can unintentionally exclude people who process information differently.',
-      'Their sessions invite teams to reconsider speed, participation and what they interpret as confidence or competence.',
-    ],
-    tags: [
-      'Everyday inclusion',
-      'Inclusive communication',
-      'Belonging',
-    ],
-    sessionFormats: [
-      'Small-group workshop',
-      'Q&A panel',
-    ],
-    industries: ['Technology', 'Public sector'],
-    availability: 'Available now',
-    testimonials: [
-      {
-        quote:
-          'Mika changed how we facilitate meetings across the entire organization.',
-        author: 'Sanna Lahti',
-        role: 'Design Director, Kajo',
-      },
-      {
-        quote:
-          'Quiet, precise and incredibly impactful.',
-        author: 'Erik Lund',
-        role: 'People Partner, Norr',
-      },
-    ],
-    image: publicAsset('/assets/speakers/sam-okafor.jpg'),
+    image: publicAsset('/assets/speakers/nia-williams.jpg'),
   },
   {
     id: 'joao-mendes',
@@ -554,7 +513,7 @@ export const speakers: Speaker[] = [
         role: 'Operations Manager, Eixo',
       },
     ],
-    image: publicAsset('/assets/speakers/devon-costa.jpg'),
+    image: publicAsset('/assets/speakers/joao-mendes.jpg'),
   },
   {
     id: 'leila-ben-youssef',
@@ -595,48 +554,7 @@ export const speakers: Speaker[] = [
         role: 'People Director, Nexo',
       },
     ],
-    image: publicAsset('/assets/speakers/noor-haddad.jpg'),
-  },
-  {
-    id: 'sofie-de-wilde',
-    name: 'Sofie De Wilde',
-    pronouns: 'she/her',
-    roleLine: 'Learning and Culture Director (Common)',
-    location: 'Antwerp, Belgium',
-    timezone: 'CEST',
-    languages: ['Dutch', 'French', 'English'],
-    quote:
-      'A team does not become inclusive because nobody complains. Sometimes silence is the clearest warning.',
-    storyOverview: [
-      'Sofie explores how leaders interpret silence, agreement and low conflict — and why these signals do not always mean people feel safe.',
-      'Her sessions help teams create multiple ways to raise concerns, contribute ideas and challenge decisions.',
-    ],
-    tags: [
-      'Leadership',
-      'Inclusive communication',
-      'Allyship',
-    ],
-    sessionFormats: [
-      'Leadership roundtable',
-      'Small-group workshop',
-    ],
-    industries: ['Education', 'Retail'],
-    availability: 'Available now',
-    testimonials: [
-      {
-        quote:
-          'Sofie helped us understand that low conflict was not the same as high trust.',
-        author: 'Anke Peeters',
-        role: 'Managing Director, Samen',
-      },
-      {
-        quote:
-          'Practical, observant and exceptionally good at reading a room.',
-        author: 'Louis Vermeulen',
-        role: 'HR Partner, Delta',
-      },
-    ],
-    image: publicAsset('/assets/speakers/lina-petrova.jpg'),
+    image: publicAsset('/assets/speakers/leila-ben-youssef.jpg'),
   },
   {
     id: 'andrei-popescu',
@@ -677,7 +595,7 @@ export const speakers: Speaker[] = [
         role: 'Technology Director, Forma',
       },
     ],
-    image: publicAsset('/assets/speakers/theo-nakamura.jpg'),
+    image: publicAsset('/assets/speakers/andrei-popescu.jpg'),
   },
 ]
 

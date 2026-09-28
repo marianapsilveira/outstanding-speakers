@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/Button'
-import { pagePaddingX } from '@/constants/layout'
+import { pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
 import { speakersListingTopState } from '@/constants/speakersNavigation'
 import {
   bodyText20,
@@ -50,6 +50,8 @@ export function BookingConfirmationSection() {
           loop
           playsInline
           preload="auto"
+          disablePictureInPicture
+          controls={false}
         >
           <source
             src={publicAsset('assets/request-accepted-hero.mp4')}
@@ -104,12 +106,7 @@ export function BookingConfirmationSection() {
         `}
       >
         <div
-          className="
-            flex
-            w-full
-            items-start
-            justify-between
-          "
+          className={typewriterEyebrowRow}
         >
           <p className={`${eyebrowText} text-text-light/90`}>
             What happens

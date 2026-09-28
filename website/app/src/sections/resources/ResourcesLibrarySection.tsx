@@ -7,6 +7,7 @@ import { resourceGroups } from '@/data/resources'
 import {
   editorialContent,
   pagePaddingX,
+  typewriterEyebrowRow,
 } from '@/constants/layout'
 import { eyebrowText, groupHeading, supportingDescription } from '@/constants/typography'
 
@@ -47,9 +48,7 @@ export function ResourcesLibrarySection() {
       <div
         className={`
           relative z-20
-          flex w-full
-          items-start
-          justify-between
+          ${typewriterEyebrowRow}
           ${pagePaddingX}
         `}
       >

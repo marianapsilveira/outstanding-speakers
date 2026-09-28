@@ -10,3 +10,7 @@ export const contentArea = `${contentMax}`
 /** Editorial content column used across homepage and speakers page. */
 export const editorialContent =
   'mx-auto w-full max-w-[1320px] px-6 md:px-10 min-[1400px]:px-0'
+
+/** Pair of typewriter eyebrows: stack on small screens, split on desktop. */
+export const typewriterEyebrowRow =
+  'flex w-full flex-col items-start gap-3 md:flex-row md:justify-between md:gap-0'

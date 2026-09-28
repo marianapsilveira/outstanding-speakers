@@ -5,6 +5,7 @@ import { SpeakerProfilePage } from '@/pages/SpeakerProfilePage'
 import { BookSpeakerPage } from '@/pages/BookSpeakerPage'
 import { BookingConfirmationPage } from '@/pages/BookingConfirmationPage'
 import { ResourcesPage } from '@/pages/ResourcesPage'
+import { FaqPage } from '@/pages/FaqPage'
 import { ScrollManager } from '@/components/navigation/ScrollManager'
 
 function PlaceholderPage({ title }: { title: string }) {
@@ -99,7 +100,7 @@ export default function App() {
 
         <Route
           path="/faq"
-          element={<PlaceholderPage title="FAQ" />}
+          element={<FaqPage />}
         />
 
         <Route

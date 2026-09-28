@@ -7,7 +7,7 @@ import {
 } from '@/components/motion/TypewriterLabel'
 import { ArrowIcon } from '@/components/ui/ArrowIcon'
 import { featuredSpeakers } from '@/data/speakers'
-import { pagePaddingX } from '@/constants/layout'
+import { pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
 import { speakersListingTopState } from '@/constants/speakersNavigation'
 import { eyebrowText } from '@/constants/typography'
 
@@ -58,9 +58,7 @@ export function FeaturedSpeakersSection() {
       <div
         className={`
           relative z-20
-          flex w-full
-          items-start
-          justify-between
+          ${typewriterEyebrowRow}
           pt-[40px]
           ${pagePaddingX}
         `}

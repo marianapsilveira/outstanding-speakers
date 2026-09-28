@@ -6,11 +6,10 @@ import {
   fontDisplayExtraLight,
   fontDisplayRoman,
 } from '@/constants/typography'
-import { publicAsset } from '@/utils/publicAsset'
 
 const easing = [0.22, 1, 0.36, 1] as const
 
-export function ResourcesHeroSection() {
+export function FaqHeroSection() {
   const reducedMotion = useReducedMotion()
 
   const headlineInitial = reducedMotion
@@ -24,27 +23,10 @@ export function ResourcesHeroSection() {
         w-full
         overflow-hidden
         bg-[#281749]
-        pt-[360px]
-        pb-[260px]
+        pt-[clamp(11rem,24vh,22.5rem)]
+        pb-[clamp(12rem,22vh,16.25rem)]
       "
     >
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <video
-          className="absolute inset-0 h-full w-full object-cover opacity-35"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          disablePictureInPicture
-          controls={false}
-        >
-          <source src={publicAsset('assets/resources-hero.mp4')} type="video/mp4" />
-        </video>
-
-        <div className="absolute inset-0 bg-[#281749]/55" />
-      </div>
-
       <div className={`relative z-10 w-full ${pagePaddingX}`}>
         <motion.h1
           initial={headlineInitial}
@@ -60,13 +42,14 @@ export function ResourcesHeroSection() {
             max-w-none
             text-center
             ${displayHeading160}
-            lg:whitespace-nowrap
           `}
         >
-          <span className={`text-text-light ${fontDisplayExtraLight}`}>
-            Beyond{' '}
+          <span className={`block text-text-light ${fontDisplayExtraLight}`}>
+            Frequently asked
           </span>
-          <span className={`text-lime ${fontDisplayRoman}`}>the session</span>
+          <span className={`block text-lime ${fontDisplayRoman}`}>
+            questions
+          </span>
         </motion.h1>
       </div>
     </section>
