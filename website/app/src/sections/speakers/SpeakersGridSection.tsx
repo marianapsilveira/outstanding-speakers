@@ -20,7 +20,7 @@ import {
 
 const sectionLabels = [
   'Find a person whose story',
-  'Fits your conversation.',
+  'Fits your conversation',
 ]
 
 const typingSpeed = 30

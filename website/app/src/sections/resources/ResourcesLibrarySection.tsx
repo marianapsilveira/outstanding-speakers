@@ -13,7 +13,7 @@ import { eyebrowText, groupHeading, supportingDescription } from '@/constants/ty
 
 const sectionLabels = [
   'For the questions before',
-  'And the everyday practice after.',
+  'And the everyday practice after',
 ]
 
 const typingSpeed = 30

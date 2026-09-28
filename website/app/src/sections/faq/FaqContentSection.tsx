@@ -13,7 +13,7 @@ import { eyebrowText } from '@/constants/typography'
 
 const sectionLabels = [
   'The questions behind',
-  'the conversation.',
+  'the conversation',
 ]
 
 const typingSpeed = 30

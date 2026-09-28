@@ -11,7 +11,6 @@ REPO="${DEPLOY_REPO:-https://github.com/marianapsilveira/outstanding-speakers.gi
 echo "Building site…"
 npm run build
 
-rm -rf dist/fonts
 cp dist/index.html dist/404.html
 touch dist/.nojekyll
 printf '%s\n' "$DOMAIN" > dist/CNAME

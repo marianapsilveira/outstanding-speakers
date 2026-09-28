@@ -148,7 +148,14 @@ export function HeroSection() {
           ))}
         </div>
 
-        <div className="mt-auto flex w-full items-end justify-between pt-10 md:hidden">
+        <div
+          className="
+            mt-auto flex w-full flex-col items-start gap-3 pt-10
+            min-[26.5rem]:flex-row min-[26.5rem]:items-end
+            min-[26.5rem]:justify-between
+            md:hidden
+          "
+        >
           {compactHeroLabels.map((label, index) => (
             <TypewriterLabel
               key={label}
@@ -160,7 +167,13 @@ export function HeroSection() {
               )}
               speed={mobileTypingSpeed}
               nowrap
-              className={`${eyebrowText} shrink-0 text-pink-section`}
+              className={`
+                ${eyebrowText}
+                text-pink-section
+                ${index === compactHeroLabels.length - 1
+                  ? 'self-end min-[26.5rem]:self-auto'
+                  : ''}
+              `}
             >
               {label}
             </TypewriterLabel>
