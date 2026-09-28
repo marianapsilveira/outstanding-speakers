@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Link, Routes, Route } from 'react-router-dom'
 import { HomePage } from '@/pages/HomePage'
 import { SpeakersPage } from '@/pages/SpeakersPage'
 import { SpeakerProfilePage } from '@/pages/SpeakerProfilePage'
@@ -29,19 +29,21 @@ function PlaceholderPage({ title }: { title: string }) {
         Coming soon in a future build phase.
       </p>
 
-      <a
-        href="/"
+      <Link
+        to="/"
         className="mt-8 text-lime hover:underline"
       >
         Back to Home
-      </a>
+      </Link>
     </div>
   )
 }
 
 export default function App() {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename || undefined}>
       <ScrollManager />
 
       <Routes>

@@ -6,6 +6,7 @@ import {
   fontDisplayExtraLight,
   fontDisplayRoman,
 } from '@/constants/typography'
+import { publicAsset } from '@/utils/publicAsset'
 
 const easing = [0.22, 1, 0.36, 1] as const
 
@@ -36,7 +37,7 @@ export function ResourcesHeroSection() {
           playsInline
           preload="auto"
         >
-          <source src="/assets/resources-hero.mp4" type="video/mp4" />
+          <source src={publicAsset('assets/resources-hero.mp4')} type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-[#281749]/55" />

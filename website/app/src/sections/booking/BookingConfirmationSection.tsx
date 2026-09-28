@@ -10,6 +10,7 @@ import {
   stepNumeralDisplay,
   stepTitleDisplay,
 } from '@/constants/typography'
+import { publicAsset } from '@/utils/publicAsset'
 
 const nextSteps = [
   {
@@ -51,7 +52,7 @@ export function BookingConfirmationSection() {
           preload="auto"
         >
           <source
-            src="/assets/request-accepted-hero.mp4"
+            src={publicAsset('assets/request-accepted-hero.mp4')}
             type="video/mp4"
           />
         </video>

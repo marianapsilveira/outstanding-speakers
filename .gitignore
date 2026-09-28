@@ -1,7 +1,6 @@
 .DS_Store
 
-# GitHub rejects files over 100MB; this network also blocks large git POSTs (Zscaler).
-website/app/public/assets/*.mp4
+# Source Figma binaries stay local
 figma/videos/
 figma/screenshots/
 

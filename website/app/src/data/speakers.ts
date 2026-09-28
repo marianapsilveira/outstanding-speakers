@@ -1,3 +1,5 @@
+import { publicAsset } from '@/utils/publicAsset'
+
 export interface SpeakerTestimonial {
   quote: string
   author: string
@@ -58,7 +60,7 @@ export const speakers: Speaker[] = [
         role: 'Chief of Staff, Meridian',
       },
     ],
-    image: '/assets/speakers/amara-okonkwo.jpg',
+    image: publicAsset('/assets/speakers/amara-okonkwo.jpg'),
   },
   {
     id: 'devon-costa',
@@ -100,7 +102,7 @@ export const speakers: Speaker[] = [
         role: 'Head of People, Tall',
       },
     ],
-    image: '/assets/speakers/devon-costa.jpg',
+    image: publicAsset('/assets/speakers/devon-costa.jpg'),
   },
   {
     id: 'elias-fontaine',
@@ -141,7 +143,7 @@ export const speakers: Speaker[] = [
         role: 'HR Director, Klaro',
       },
     ],
-    image: '/assets/speakers/elias-fontaine.jpg',
+    image: publicAsset('/assets/speakers/elias-fontaine.jpg'),
   },
   {
     id: 'lina-petrova',
@@ -180,7 +182,7 @@ export const speakers: Speaker[] = [
         role: 'Learning & Culture, Unitas',
       },
     ],
-    image: '/assets/speakers/lina-petrova.jpg',
+    image: publicAsset('/assets/speakers/lina-petrova.jpg'),
   },
   {
     id: 'noor-haddad',
@@ -221,7 +223,7 @@ export const speakers: Speaker[] = [
         role: 'Operations Lead, Shift',
       },
     ],
-    image: '/assets/speakers/noor-haddad.jpg',
+    image: publicAsset('/assets/speakers/noor-haddad.jpg'),
   },
   {
     id: 'rosa-iglesias',
@@ -259,7 +261,7 @@ export const speakers: Speaker[] = [
         role: 'People Manager, Traç',
       },
     ],
-    image: '/assets/speakers/rosa-iglesias.jpg',
+    image: publicAsset('/assets/speakers/rosa-iglesias.jpg'),
   },
   {
     id: 'sam-okafor',
@@ -300,7 +302,7 @@ export const speakers: Speaker[] = [
         role: 'HR Business Partner, Sera',
       },
     ],
-    image: '/assets/speakers/sam-okafor.jpg',
+    image: publicAsset('/assets/speakers/sam-okafor.jpg'),
   },
   {
     id: 'theo-nakamura',
@@ -341,7 +343,7 @@ export const speakers: Speaker[] = [
         role: 'Learning Director, Favn',
       },
     ],
-    image: '/assets/speakers/theo-nakamura.jpg',
+    image: publicAsset('/assets/speakers/theo-nakamura.jpg'),
   },
 
   /*
@@ -388,7 +390,7 @@ export const speakers: Speaker[] = [
         role: 'Regional Lead, Forma',
       },
     ],
-    image: '/assets/speakers/amara-okonkwo.jpg',
+    image: publicAsset('/assets/speakers/amara-okonkwo.jpg'),
   },
   {
     id: 'mateo-alvarez',
@@ -429,7 +431,7 @@ export const speakers: Speaker[] = [
         role: 'Operations Director, Norte',
       },
     ],
-    image: '/assets/speakers/elias-fontaine.jpg',
+    image: publicAsset('/assets/speakers/elias-fontaine.jpg'),
   },
   {
     id: 'nia-williams',
@@ -470,7 +472,7 @@ export const speakers: Speaker[] = [
         role: 'HR Lead, Avance',
       },
     ],
-    image: '/assets/speakers/rosa-iglesias.jpg',
+    image: publicAsset('/assets/speakers/rosa-iglesias.jpg'),
   },
   {
     id: 'mika-korhonen',
@@ -511,7 +513,7 @@ export const speakers: Speaker[] = [
         role: 'People Partner, Norr',
       },
     ],
-    image: '/assets/speakers/sam-okafor.jpg',
+    image: publicAsset('/assets/speakers/sam-okafor.jpg'),
   },
   {
     id: 'joao-mendes',
@@ -552,7 +554,7 @@ export const speakers: Speaker[] = [
         role: 'Operations Manager, Eixo',
       },
     ],
-    image: '/assets/speakers/devon-costa.jpg',
+    image: publicAsset('/assets/speakers/devon-costa.jpg'),
   },
   {
     id: 'leila-ben-youssef',
@@ -593,7 +595,7 @@ export const speakers: Speaker[] = [
         role: 'People Director, Nexo',
       },
     ],
-    image: '/assets/speakers/noor-haddad.jpg',
+    image: publicAsset('/assets/speakers/noor-haddad.jpg'),
   },
   {
     id: 'sofie-de-wilde',
@@ -634,7 +636,7 @@ export const speakers: Speaker[] = [
         role: 'HR Partner, Delta',
       },
     ],
-    image: '/assets/speakers/lina-petrova.jpg',
+    image: publicAsset('/assets/speakers/lina-petrova.jpg'),
   },
   {
     id: 'andrei-popescu',
@@ -675,7 +677,7 @@ export const speakers: Speaker[] = [
         role: 'Technology Director, Forma',
       },
     ],
-    image: '/assets/speakers/theo-nakamura.jpg',
+    image: publicAsset('/assets/speakers/theo-nakamura.jpg'),
   },
 ]
 

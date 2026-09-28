@@ -8,6 +8,7 @@ import { FeaturedSpeakersSection } from '@/sections/home/FeaturedSpeakersSection
 import { ResourcesSection } from '@/sections/home/ResourcesSection'
 import { FinalCtaSection } from '@/sections/home/FinalCtaSection'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { publicAsset } from '@/utils/publicAsset'
 
 export function HomePage() {
   const videoSectionRef = useRef<HTMLDivElement>(null)
@@ -60,7 +61,7 @@ export function HomePage() {
               loop
               playsInline
             >
-              <source src="/assets/home-hero.mp4" type="video/mp4" />
+              <source src={publicAsset('assets/home-hero.mp4')} type="video/mp4" />
             </video>
 
             {/* Very subtle dark treatment over the video */}
