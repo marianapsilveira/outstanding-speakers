@@ -1,0 +1,9 @@
+.DS_Store
+
+# GitHub rejects files over 100MB; this network also blocks large git POSTs (Zscaler).
+website/app/public/assets/*.mp4
+figma/videos/
+figma/screenshots/
+
+# Local scratch captures
+website/app/.tmp-*

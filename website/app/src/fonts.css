@@ -1,0 +1,56 @@
+/*
+  Neue Haas Grotesk Display Pro — CSS weight mapping.
+
+  The installed desktop faces do not use standard CSS weight classes:
+    35 Extra Light  usWeightClass 350
+    45 Light        usWeightClass 400
+    55 Roman        usWeightClass 450
+    65 Medium       usWeightClass 500
+
+  Without these @font-face rules, `font-weight: 400` matches 45 Light
+  (or, in Chromium, 35 Extra Light) instead of Figma’s 55 Roman.
+*/
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src:
+    local('NHaasGroteskDSPro-35XLt'),
+    local('Neue Haas Grotesk Display Pro 35 Extra Light'),
+    url('/fonts/NHaasGroteskDSPro-35XLt.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src:
+    local('NHaasGroteskDSPro-45Lt'),
+    local('Neue Haas Grotesk Display Pro 45 Light'),
+    url('/fonts/NHaasGroteskDSPro-45Lt.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src:
+    local('NHaasGroteskDSPro-55Rg'),
+    local('Neue Haas Grotesk Display Pro 55 Roman'),
+    url('/fonts/NHaasGroteskDSPro-55Rg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src:
+    local('NHaasGroteskDSPro-65Md'),
+    local('Neue Haas Grotesk Display Pro 65 Medium'),
+    url('/fonts/NHaasGroteskDSPro-65Md.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
