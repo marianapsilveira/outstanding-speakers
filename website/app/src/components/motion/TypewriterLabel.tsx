@@ -31,7 +31,6 @@ export function TypewriterLabel({
   delay = 0,
   speed = 32,
   once = true,
-  nowrap = false,
 }: TypewriterLabelProps) {
   const triggerRef = useRef<HTMLSpanElement>(null)
 
@@ -91,9 +90,7 @@ export function TypewriterLabel({
   }, [children, delay, isInView, once, speed])
 
   const visibleText = children.slice(0, visibleCharacters)
-  const wrapClass = nowrap
-    ? 'whitespace-nowrap'
-    : 'whitespace-normal md:whitespace-nowrap'
+  const wrapClass = 'whitespace-nowrap'
 
   return (
     <span

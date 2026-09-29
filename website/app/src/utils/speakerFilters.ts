@@ -14,6 +14,23 @@ export const emptySpeakerFilters =
     availability: [],
   })
 
+export const cloneSpeakerFilters = (
+  filters: SpeakerFilterState,
+): SpeakerFilterState => ({
+  topic: [...filters.topic],
+  language: [...filters.language],
+  industry: [...filters.industry],
+  availability: [...filters.availability],
+})
+
+export const countActiveSpeakerFilters = (
+  filters: SpeakerFilterState,
+) =>
+  filters.topic.length +
+  filters.language.length +
+  filters.industry.length +
+  filters.availability.length
+
 function matchesFilterGroup(
   speaker: Speaker,
   groupId: keyof SpeakerFilterState,

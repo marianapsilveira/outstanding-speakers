@@ -3,6 +3,7 @@ export type ResourceAudience = 'employees' | 'managers' | 'hr'
 export type ResourceCategory =
   | 'Training'
   | 'Document'
+  | 'Video'
   | 'Guide'
   | 'Checklist'
 
@@ -11,7 +12,7 @@ export interface Resource {
   title: string
   description: string
   audience: ResourceAudience
-  duration: string
+  duration?: string
   category: ResourceCategory
   href?: string
 }
@@ -23,8 +24,7 @@ export interface ResourceGroup {
   items: Resource[]
 }
 
-const lgbtqAllyshipUrl =
-  'https://www.youtube.com/watch?v=ZQH4Mu5mxqY'
+const lgbtqAllyshipUrl = 'https://www.youtube.com/watch?v=ZQH4Mu5mxqY'
 
 export const resourceGroups: ResourceGroup[] = [
   {
@@ -44,22 +44,23 @@ export const resourceGroups: ResourceGroup[] = [
         href: lgbtqAllyshipUrl,
       },
       {
-        id: 'understanding-gender-identity',
-        title: 'Understanding gender identity',
+        id: 'training-toolkit-gender-diverse-employees',
+        title: 'Training toolkit for gender diverse employees',
         description:
-          'Plain-language foundations, free of jargon and assumptions.',
+          'Know your rights, and how to navigate workplace processes with more confidence.',
         audience: 'employees',
-        duration: '8 min',
-        category: 'Document',
+        category: 'Guide',
+        href: 'https://www.transgendernetwerk.nl/wp-content/uploads/2023/01/Inclusion4All-TINb-Training-Toolkit-English-version-nov22.pdf',
       },
       {
-        id: 'everyday-allyship',
-        title: 'Everyday allyship',
+        id: 'trans-intersex-non-binary-people-at-work',
+        title: 'Trans, intersex and non-binary people at work',
         description:
-          'Small, repeatable habits that make a colleague’s day easier.',
+          'See the barriers trans, intersex and non-binary people face at work, and the changes that help.',
         audience: 'employees',
         duration: '6 min',
-        category: 'Guide',
+        category: 'Video',
+        href: 'https://www.youtube.com/watch?v=FWh2u0xXbZ8',
       },
     ],
   },
@@ -75,17 +76,17 @@ export const resourceGroups: ResourceGroup[] = [
         description:
           'Follow their lead, protect their privacy, keep it human.',
         audience: 'managers',
-        duration: '12 min',
-        category: 'Checklist',
+        category: 'Guide',
+        href: 'https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/equality/public/trans/Guidance-for-managers-to-support-employees-who-are-transitioning-(May-2025).pdf',
       },
       {
-        id: 'inclusive-leadership-guide',
-        title: 'Inclusive leadership guide',
+        id: 'inclusive-leadership-practices',
+        title: 'Inclusive leadership practices',
         description:
-          'Leading in a way that makes safety the default, not the exception.',
+          'Create a safe and respectful environment for everyone, especially LGBTQ+ team members.',
         audience: 'managers',
-        duration: '10 min',
         category: 'Guide',
+        href: 'https://nextgendei.com/rainbow-hub/#inclusive:~:text=Knowing%20LGBTQ%2B-,Inclusive%20Leadership%20Practices,-Policies%20%26%20Legal%20Considerations',
       },
     ],
   },
@@ -95,31 +96,22 @@ export const resourceGroups: ResourceGroup[] = [
     description: 'Documentation that follows the human conversation.',
     items: [
       {
-        id: 'care-clarity-starter-kit',
-        title: 'Care & clarity starter kit',
+        id: 'inclusive-onboarding',
+        title: 'Inclusive onboarding',
         description:
-          'A starter pack that helps HR respond to identity affirmation or transition processes with care.',
+          'A checklist to help HR welcome people with care from day one.',
         audience: 'hr',
-        duration: '9 min',
         category: 'Checklist',
+        href: 'https://nextgendei.com/rainbow-hub/#checklist:~:text=Training%20%26%20Development-,Checklists%20%26%20Forms,-Quick%20Tips',
       },
       {
-        id: 'disclosure-consent-planner',
-        title: 'Disclosure & Consent Planner',
+        id: 'training-toolkit-hr-professionals',
+        title: 'Training toolkit for HR professionals',
         description:
-          'Templates and prompts, designed to be adapted to each employee.',
+          'A guideline for HR training on creating inclusive workplaces for transgender, intersex and non-binary people.',
         audience: 'hr',
-        duration: '8 min',
-        category: 'Document',
-      },
-      {
-        id: 'event-preparation-guide',
-        title: 'Event preparation guide',
-        description:
-          'Make a speaker session safe, well-run and worth the speaker’s time.',
-        audience: 'hr',
-        duration: '8 min',
         category: 'Guide',
+        href: 'https://www.transgendernetwerk.nl/wp-content/uploads/2023/01/Inclusion4All-HR-Training-Toolkit-English-version-nov22.pdf',
       },
     ],
   },

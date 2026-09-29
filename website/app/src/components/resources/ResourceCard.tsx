@@ -9,50 +9,12 @@ const categoryChipClass: Record<ResourceCategory, string> = {
     'border-[#7A5A00] bg-[rgba(122,90,0,0.1)] text-[#7A5A00]',
   Document:
     'border-[#564BE5] bg-[rgba(86,75,229,0.1)] text-[#564BE5]',
+  Video:
+    'border-[#564BE5] bg-[rgba(86,75,229,0.1)] text-[#564BE5]',
   Guide:
     'border-[#A61E7A] bg-[rgba(166,30,122,0.1)] text-[#A61E7A]',
   Checklist:
     'border-[#4A6B00] bg-[rgba(74,107,0,0.1)] text-[#4A6B00]',
-}
-
-function ExternalLinkIcon() {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      aria-hidden="true"
-      className="h-3.5 w-3.5"
-      fill="none"
-    >
-      <path
-        d="M6.5 3.5H3.5A1.5 1.5 0 0 0 2 5v7.5A1.5 1.5 0 0 0 3.5 14H11a1.5 1.5 0 0 0 1.5-1.5V9.5M9 2h5v5M7.5 8.5 14 2"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-function OpenResourceLabel() {
-  return (
-    <span
-      className="
-        mt-auto
-        inline-flex
-        items-center
-        gap-[6px]
-        pt-[20px]
-        font-sans
-        text-[14px]
-        font-medium
-        text-text-violet
-      "
-    >
-      Open resource
-      <ExternalLinkIcon />
-    </span>
-  )
 }
 
 export function ResourceCard({ resource }: ResourceCardProps) {
@@ -78,9 +40,11 @@ export function ResourceCard({ resource }: ResourceCardProps) {
           {resource.category}
         </span>
 
-        <span className="font-sans text-[12px] font-normal text-secondary">
-          {resource.duration}
-        </span>
+        {resource.duration && (
+          <span className="font-sans text-[12px] font-normal text-secondary">
+            {resource.duration}
+          </span>
+        )}
       </div>
 
       <h3
@@ -109,8 +73,6 @@ export function ResourceCard({ resource }: ResourceCardProps) {
       >
         {resource.description}
       </p>
-
-      <OpenResourceLabel />
     </>
   )
 

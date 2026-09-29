@@ -1,4 +1,4 @@
-import { speakerFilterGroups } from '@/data/speakerFilters'
+import { SpeakerFilterOptions } from '@/components/speakers/SpeakerFilterOptions'
 import type { SpeakerFilterState } from '@/utils/speakerFilters'
 
 interface SpeakersFilterSidebarProps {
@@ -16,11 +16,13 @@ export function SpeakersFilterSidebar({
   return (
     <aside
       className="
+        hidden
         w-full
         shrink-0
         self-start
         lg:sticky
         lg:top-[40px]
+        lg:block
         lg:w-[220px]
       "
     >
@@ -36,88 +38,11 @@ export function SpeakersFilterSidebar({
         Refine
       </h2>
 
-      <div
-        className="
-          mt-[28px]
-          flex
-          flex-col
-          gap-[28px]
-        "
-      >
-        {speakerFilterGroups.map((group) => (
-          <div key={group.id}>
-            <h3
-              className="
-                font-mono
-                text-[12px]
-                font-normal
-                uppercase
-                leading-[1.3]
-                tracking-[0em]
-                text-secondary
-              "
-            >
-              {group.label}
-            </h3>
-
-            <div
-              className="
-                mt-[12px]
-                flex
-                flex-wrap
-                gap-[8px]
-              "
-            >
-              {group.options.map((option) => {
-                const isActive =
-                  filters[group.id].includes(option)
-
-                return (
-                  <button
-                    key={option}
-                    type="button"
-                    aria-pressed={isActive}
-                    onClick={() =>
-                      onToggle(group.id, option)
-                    }
-                    className={`
-                      inline-flex
-                      min-h-[30px]
-                      items-center
-                      rounded-full
-                      border
-                      px-[12px]
-                      py-[6px]
-                      font-sans
-                      text-[12px]
-                      font-normal
-                      leading-[1]
-                      tracking-normal
-                      transition-colors
-                      duration-200
-                      ${
-                        isActive
-                          ? `
-                            border-text-violet
-                            bg-text-violet/8
-                            text-text-violet
-                          `
-                          : `
-                            border-[#D9D7E3]
-                            bg-white
-                            text-text-dark
-                            hover:border-text-violet/35
-                          `
-                      }
-                    `}
-                  >
-                    {option}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-        ))}
+      <div className="mt-[28px]">
+        <SpeakerFilterOptions
+          filters={filters}
+          onToggle={onToggle}
+        />
       </div>
     </aside>
   )

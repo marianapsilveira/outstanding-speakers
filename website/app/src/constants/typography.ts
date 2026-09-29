@@ -33,7 +33,7 @@ export const stepTitleDisplay =
   'font-display text-[32px] font-normal leading-[1.15] tracking-normal'
 
 export const eyebrowText =
-  'font-mono text-[18px] font-normal uppercase tracking-[0.16em]'
+  'font-mono text-[clamp(0.6875rem,3vw,1.125rem)] font-normal uppercase tracking-[0.08em] md:text-[18px] md:tracking-[0.16em]'
 
 export const supportingDescription =
   'font-sans text-[18px] font-normal leading-[1.5]'

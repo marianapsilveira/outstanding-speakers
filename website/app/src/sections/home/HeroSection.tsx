@@ -14,15 +14,11 @@ import {
 } from '@/constants/typography'
 
 const heroLabels = ['Swap Experts', 'Change Minds', 'End the Bias']
-const compactHeroLabels = ['Swap Experts', 'End the Bias']
 
 const easing = [0.22, 1, 0.36, 1] as const
 
 const desktopTypingSpeed = 38
 const desktopTypingGap = 120
-
-const mobileTypingSpeed = 34
-const mobileTypingGap = 100
 
 export function HeroSection() {
   const reducedMotion = useReducedMotion()
@@ -130,54 +126,33 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        <div className="mt-auto hidden w-full items-end justify-between pt-12 md:flex">
-          {heroLabels.map((label, index) => (
-            <TypewriterLabel
-              key={label}
-              delay={getSequentialTypingDelay(
-                heroLabels,
-                index,
-                desktopTypingSpeed,
-                desktopTypingGap,
-              )}
-              speed={desktopTypingSpeed}
-              className={`${eyebrowText} text-pink-section`}
-            >
-              {label}
-            </TypewriterLabel>
-          ))}
-        </div>
-
-        <div
-          className="
-            mt-auto flex w-full flex-col items-start gap-3 pt-10
-            min-[26.5rem]:flex-row min-[26.5rem]:items-end
-            min-[26.5rem]:justify-between
-            md:hidden
-          "
-        >
-          {compactHeroLabels.map((label, index) => (
-            <TypewriterLabel
-              key={label}
-              delay={getSequentialTypingDelay(
-                compactHeroLabels,
-                index,
-                mobileTypingSpeed,
-                mobileTypingGap,
-              )}
-              speed={mobileTypingSpeed}
-              nowrap
-              className={`
-                ${eyebrowText}
-                text-pink-section
-                ${index === compactHeroLabels.length - 1
-                  ? 'self-end min-[26.5rem]:self-auto'
-                  : ''}
-              `}
-            >
-              {label}
-            </TypewriterLabel>
-          ))}
+        <div className="@container mt-auto w-full pt-10 md:pt-12">
+          <div className="flex w-full items-end justify-between gap-x-2">
+            {heroLabels.map((label, index) => (
+              <TypewriterLabel
+                key={label}
+                delay={getSequentialTypingDelay(
+                  heroLabels,
+                  index,
+                  desktopTypingSpeed,
+                  desktopTypingGap,
+                )}
+                speed={desktopTypingSpeed}
+                nowrap
+                className={`
+                  ${eyebrowText}
+                  text-pink-section
+                  ${
+                    label === 'Change Minds'
+                      ? 'hidden @min-[21rem]:inline-block'
+                      : ''
+                  }
+                `}
+              >
+                {label}
+              </TypewriterLabel>
+            ))}
+          </div>
         </div>
       </div>
     </section>

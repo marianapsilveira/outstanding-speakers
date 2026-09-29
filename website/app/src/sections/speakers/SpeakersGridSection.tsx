@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { SpeakerCard } from '@/components/speakers/SpeakerCard'
 import { SpeakersFilterSidebar } from '@/components/speakers/SpeakersFilterSidebar'
+import { SpeakersFilterSheet } from '@/components/speakers/SpeakersFilterSheet'
 import {
   TypewriterLabel,
   getSequentialTypingDelay,
@@ -13,6 +14,7 @@ import {
 } from '@/constants/layout'
 import { eyebrowText } from '@/constants/typography'
 import {
+  countActiveSpeakerFilters,
   emptySpeakerFilters,
   filterSpeakers,
   type SpeakerFilterState,
@@ -52,13 +54,36 @@ function SearchIcon() {
   )
 }
 
+function FilterIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="h-[18px] w-[18px]"
+      fill="none"
+    >
+      <path
+        d="M4 6h16M7 12h10M10 18h4"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
 export function SpeakersGridSection() {
   const [query, setQuery] = useState('')
+  const [filterSheetOpen, setFilterSheetOpen] =
+    useState(false)
 
   const [filters, setFilters] =
     useState<SpeakerFilterState>(
       emptySpeakerFilters,
     )
+
+  const activeFilterCount =
+    countActiveSpeakerFilters(filters)
 
   const filteredSpeakers = useMemo(
     () =>
@@ -306,7 +331,15 @@ export function SpeakersGridSection() {
             aria-hidden="true"
           />
 
-          <label className="block w-full">
+          <div
+            className="
+              flex
+              w-full
+              items-center
+              gap-3
+            "
+          >
+            <label className="block min-w-0 flex-1">
             <span className="sr-only">
               Search speakers
             </span>
@@ -342,14 +375,73 @@ export function SpeakersGridSection() {
                   border-0
                   bg-transparent
                   font-sans
-                  text-[15px]
+                  text-[16px]
                   text-text-dark
                   placeholder:text-secondary/70
                   focus:outline-none
+                  lg:text-[15px]
                 "
               />
             </span>
-          </label>
+            </label>
+
+            <button
+              type="button"
+              onClick={() =>
+                setFilterSheetOpen(true)
+              }
+              aria-haspopup="dialog"
+              aria-expanded={filterSheetOpen}
+              aria-label={
+                activeFilterCount > 0
+                  ? `Open filters, ${activeFilterCount} selected`
+                  : 'Open filters'
+              }
+              className="
+                relative
+                flex
+                h-[52px]
+                w-[52px]
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#D9D7E3]
+                bg-white
+                text-text-dark
+                shadow-[0_1px_2px_rgba(9,9,11,0.04)]
+                lg:hidden
+              "
+            >
+              <FilterIcon />
+
+              {activeFilterCount > 0 && (
+                <span
+                  className="
+                    absolute
+                    -right-0.5
+                    -top-0.5
+                    flex
+                    h-[18px]
+                    min-w-[18px]
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-text-violet
+                    px-1
+                    font-sans
+                    text-[10px]
+                    font-semibold
+                    leading-none
+                    text-white
+                  "
+                >
+                  {activeFilterCount}
+                </span>
+              )}
+            </button>
+          </div>
         </div>
 
         <div
@@ -420,6 +512,18 @@ export function SpeakersGridSection() {
           </div>
         </div>
       </div>
+
+      <SpeakersFilterSheet
+        open={filterSheetOpen}
+        filters={filters}
+        onClose={() =>
+          setFilterSheetOpen(false)
+        }
+        onApply={(nextFilters) => {
+          setFilters(nextFilters)
+          setFilterSheetOpen(false)
+        }}
+      />
     </section>
   )
 }

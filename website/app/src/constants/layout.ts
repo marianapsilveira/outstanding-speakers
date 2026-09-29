@@ -11,6 +11,6 @@ export const contentArea = `${contentMax}`
 export const editorialContent =
   'mx-auto w-full max-w-[1320px] px-6 md:px-10 min-[1400px]:px-0'
 
-/** Pair of typewriter eyebrows: stack on small screens, split on desktop. */
+/** Pair of typewriter eyebrows: one row when they fit, wrap only if needed. */
 export const typewriterEyebrowRow =
-  'flex w-full flex-col items-start gap-3 md:flex-row md:justify-between md:gap-0'
+  'flex w-full flex-row flex-wrap items-baseline justify-between gap-x-4 gap-y-2'
