@@ -19,18 +19,19 @@ export function BookingStepNavigation({
   submitMode = false,
 }: BookingStepNavigationProps) {
   return (
-    <div
-      className="
-        mt-[40px]
-        flex
-        items-center
-        justify-between
-        gap-4
-        border-t
-        border-[#E8E6EF]
-        pt-[32px]
-      "
-    >
+    <div className="mt-auto">
+      <div
+        className="
+          mt-[40px]
+          flex
+          items-center
+          justify-between
+          gap-4
+          border-t
+          border-[#E8E6EF]
+          pt-[32px]
+        "
+      >
       {showBack ? (
         <button
           type="button"
@@ -101,7 +102,8 @@ export function BookingStepNavigation({
         {isSubmitting
           ? 'Sending…'
           : nextLabel}
-      </Button>
+        </Button>
+      </div>
     </div>
   )
 }

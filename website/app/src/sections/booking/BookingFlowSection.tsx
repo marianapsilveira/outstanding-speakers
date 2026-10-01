@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ArrowIcon } from '@/components/ui/ArrowIcon'
 import { BookingProgress } from '@/components/booking/BookingProgress'
@@ -32,6 +39,28 @@ function getTodayIsoDate(): string {
   const day = String(today.getDate()).padStart(2, '0')
 
   return `${year}-${month}-${day}`
+}
+
+function BookingStepSlot({
+  isActive,
+  children,
+}: {
+  isActive: boolean
+  children: ReactNode
+}) {
+  return (
+    <div
+      className={
+        isActive
+          ? 'col-start-1 row-start-1 flex h-full min-h-0 flex-col'
+          : 'hidden lg:col-start-1 lg:row-start-1 lg:flex lg:h-full lg:min-h-0 lg:flex-col lg:invisible lg:pointer-events-none'
+      }
+      aria-hidden={!isActive}
+      inert={!isActive || undefined}
+    >
+      {children}
+    </div>
+  )
 }
 
 function focusField(fieldId: string | null) {
@@ -309,47 +338,49 @@ export function BookingFlowSection({
               currentStep={currentStep}
             />
 
-            {currentStep === 1 && (
-              <SessionPurposeStep
-                formData={formData}
-                errors={errors}
-                onChange={handleChange}
-                onNext={handleNext}
-              />
-            )}
+            <div className="grid">
+              <BookingStepSlot isActive={currentStep === 1}>
+                <SessionPurposeStep
+                  formData={formData}
+                  errors={errors}
+                  onChange={handleChange}
+                  onNext={handleNext}
+                />
+              </BookingStepSlot>
 
-            {currentStep === 2 && (
-              <AudienceDetailsStep
-                formData={formData}
-                errors={errors}
-                onChange={handleChange}
-                onBack={handleBack}
-                onNext={handleNext}
-              />
-            )}
+              <BookingStepSlot isActive={currentStep === 2}>
+                <AudienceDetailsStep
+                  formData={formData}
+                  errors={errors}
+                  onChange={handleChange}
+                  onBack={handleBack}
+                  onNext={handleNext}
+                />
+              </BookingStepSlot>
 
-            {currentStep === 3 && (
-              <DateLogisticsStep
-                formData={formData}
-                errors={errors}
-                minDate={minDate}
-                onChange={handleChange}
-                onBack={handleBack}
-                onNext={handleNext}
-              />
-            )}
+              <BookingStepSlot isActive={currentStep === 3}>
+                <DateLogisticsStep
+                  formData={formData}
+                  errors={errors}
+                  minDate={minDate}
+                  onChange={handleChange}
+                  onBack={handleBack}
+                  onNext={handleNext}
+                />
+              </BookingStepSlot>
 
-            {currentStep === 4 && (
-              <MessageToSpeakerStep
-                speaker={speaker}
-                formData={formData}
-                errors={errors}
-                onChange={handleChange}
-                onBack={handleBack}
-                onSubmit={handleSubmit}
-                isSubmitting={isSubmitting}
-              />
-            )}
+              <BookingStepSlot isActive={currentStep === 4}>
+                <MessageToSpeakerStep
+                  speaker={speaker}
+                  formData={formData}
+                  errors={errors}
+                  onChange={handleChange}
+                  onBack={handleBack}
+                  onSubmit={handleSubmit}
+                  isSubmitting={isSubmitting}
+                />
+              </BookingStepSlot>
+            </div>
           </div>
         </div>
       </div>
