@@ -7,7 +7,7 @@ import {
 } from '@/components/motion/TypewriterLabel'
 import { ArrowIcon } from '@/components/ui/ArrowIcon'
 import { featuredSpeakers } from '@/data/speakers'
-import { pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
+import { editorialContent, pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
 import { speakersListingTopState } from '@/constants/speakersNavigation'
 import { eyebrowText } from '@/constants/typography'
 
@@ -87,26 +87,22 @@ export function FeaturedSpeakersSection() {
 
       {/* Editorial content */}
       <div
-        className="
+        className={`
           relative z-10
-          mx-auto
           mt-[160px]
-          w-full
-          max-w-[1320px]
-          px-6
-          md:px-10
-          min-[1400px]:px-0
-        "
+          ${editorialContent}
+        `}
       >
         <div
           className="
             flex
             w-full
             flex-col
-            gap-[48px]
+            gap-[16px]
             lg:flex-row
             lg:items-end
             lg:justify-between
+            lg:gap-[48px]
           "
         >
           <motion.div
@@ -221,11 +217,12 @@ export function FeaturedSpeakersSection() {
 
         <div
           className="
-            mt-[48px]
+            mt-[24px]
             grid
             grid-cols-1
             items-stretch
             gap-[20px]
+            md:mt-[48px]
             md:grid-cols-3
             lg:gap-[24px]
           "

@@ -28,7 +28,7 @@ export function Footer() {
           size="footer"
           variant="dark-background"
           asLink={false}
-          className="w-full max-w-[min(100%,42rem)] justify-items-center"
+          className="w-full max-w-[42rem]"
         />
 
         <p

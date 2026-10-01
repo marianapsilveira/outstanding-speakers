@@ -7,9 +7,13 @@ export const contentMax = 'mx-auto w-full max-w-[1320px]'
 /** Combined wrapper for centred content areas. */
 export const contentArea = `${contentMax}`
 
-/** Editorial content column used across homepage and speakers page. */
+/**
+ * Editorial column. Uses the same side padding as eyebrows so they
+ * line up on small screens; drops that padding once the 1320px column
+ * already has an 80px gutter (1480px viewport).
+ */
 export const editorialContent =
-  'mx-auto w-full max-w-[1320px] px-6 md:px-10 min-[1400px]:px-0'
+  `${contentMax} ${pagePaddingX} min-[1480px]:px-0`
 
 /** Pair of typewriter eyebrows: one row when they fit, wrap only if needed. */
 export const typewriterEyebrowRow =

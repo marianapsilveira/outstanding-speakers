@@ -4,7 +4,7 @@ import {
   getSequentialTypingDelay,
 } from '@/components/motion/TypewriterLabel'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
-import { pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
+import { editorialContent, pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
 import { speakersListingTopState } from '@/constants/speakersNavigation'
 import {
   eyebrowText,
@@ -63,16 +63,11 @@ export function ResourcesFinalCtaSection() {
       </div>
 
       <div
-        className="
+        className={`
           relative z-10
-          mx-auto
           mt-[240px]
-          w-full
-          max-w-[1320px]
-          px-6
-          md:px-10
-          min-[1400px]:px-0
-        "
+          ${editorialContent}
+        `}
       >
         <RevealOnScroll>
           <div className="w-full text-left">

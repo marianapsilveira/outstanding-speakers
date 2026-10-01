@@ -26,19 +26,16 @@ export function SpeakersFilterSidebar({
         lg:w-[220px]
       "
     >
-      <h2
-        className="
-          font-sans
-          text-[18px]
-          font-semibold
-          leading-[1.2]
-          text-text-dark
-        "
-      >
-        Refine
-      </h2>
+      {/*
+       * Keeps TOPIC level with the speaker cards after removing Refine.
+       * Matches the former heading size plus its original 28px gap.
+       */}
+      <div
+        className="hidden h-[1.2em] text-[18px] lg:block"
+        aria-hidden="true"
+      />
 
-      <div className="mt-[28px]">
+      <div className="lg:mt-[28px]">
         <SpeakerFilterOptions
           filters={filters}
           onToggle={onToggle}

@@ -10,10 +10,10 @@ interface LogoProps {
 }
 
 const sizeClasses = {
-  sm: 'h-6',
-  md: 'h-6',
-  lg: 'h-8 md:h-9',
-  footer: 'h-auto w-full max-w-[min(100%,52rem)]',
+  sm: 'h-6 w-auto',
+  md: 'h-6 w-auto',
+  lg: 'h-8 w-auto md:h-9',
+  footer: 'h-auto w-full',
 }
 
 export function Logo({
@@ -23,7 +23,8 @@ export function Logo({
   className = '',
 }: LogoProps) {
   const showLightBackgroundLogo = variant === 'light-background'
-  const imageClass = `${sizeClasses[size]} w-auto`
+  const imageClass = sizeClasses[size]
+  const isFooter = size === 'footer'
 
   const content = (
     <>
@@ -55,7 +56,8 @@ export function Logo({
   )
 
   const wrapperClass = `
-    relative inline-grid items-center justify-items-center
+    relative items-center justify-items-center
+    ${isFooter ? 'grid w-full' : 'inline-grid'}
     ${className}
   `
 

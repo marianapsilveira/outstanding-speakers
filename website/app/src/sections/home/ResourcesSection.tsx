@@ -4,7 +4,7 @@ import {
   getSequentialTypingDelay,
 } from '@/components/motion/TypewriterLabel'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
-import { pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
+import { editorialContent, pagePaddingX, typewriterEyebrowRow } from '@/constants/layout'
 import { eyebrowText } from '@/constants/typography'
 
 const sectionLabels = [
@@ -77,16 +77,11 @@ export function ResourcesSection() {
       </div>
 
       <div
-        className="
+        className={`
           relative z-10
-          mx-auto
           mt-[160px]
-          w-full
-          max-w-[1320px]
-          px-6
-          md:px-10
-          min-[1400px]:px-0
-        "
+          ${editorialContent}
+        `}
       >
         <RevealOnScroll>
           <h2

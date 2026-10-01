@@ -22,7 +22,7 @@ export const beyondSessionDisplayHeading = displayHeading160
 
 /** Pink CTA section lines — 80px cap on desktop */
 export const pinkSectionHeading80 =
-  'font-display text-[clamp(2rem,5vw,5rem)] leading-[1.08] tracking-normal'
+  'font-display text-[clamp(2.75rem,5.2vw,5rem)] leading-[1.04] tracking-normal'
 
 /** Step numerals — Sometype Mono Regular 60 */
 export const stepNumeralDisplay =

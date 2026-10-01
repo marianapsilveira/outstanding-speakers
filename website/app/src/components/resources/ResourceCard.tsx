@@ -15,6 +15,8 @@ const categoryChipClass: Record<ResourceCategory, string> = {
     'border-[#A61E7A] bg-[rgba(166,30,122,0.1)] text-[#A61E7A]',
   Checklist:
     'border-[#4A6B00] bg-[rgba(74,107,0,0.1)] text-[#4A6B00]',
+  Toolkit:
+    'border-[#0B4F9C] bg-[rgba(11,79,156,0.1)] text-[#0B4F9C]',
 }
 
 export function ResourceCard({ resource }: ResourceCardProps) {

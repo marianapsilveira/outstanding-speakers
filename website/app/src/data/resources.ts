@@ -6,6 +6,7 @@ export type ResourceCategory =
   | 'Video'
   | 'Guide'
   | 'Checklist'
+  | 'Toolkit'
 
 export interface Resource {
   id: string
@@ -62,6 +63,15 @@ export const resourceGroups: ResourceGroup[] = [
         category: 'Video',
         href: 'https://www.youtube.com/watch?v=FWh2u0xXbZ8',
       },
+      {
+        id: 'transitioning-in-the-workplace',
+        title: 'Transitioning in the workplace',
+        description:
+          'A guide to help trans people navigate the parts of transition that show up at work.',
+        audience: 'employees',
+        category: 'Guide',
+        href: 'https://www.hrc.org/resources/transitioning-in-the-workplace-a-guide-for-trans-employees',
+      },
     ],
   },
   {
@@ -112,6 +122,24 @@ export const resourceGroups: ResourceGroup[] = [
         audience: 'hr',
         category: 'Guide',
         href: 'https://www.transgendernetwerk.nl/wp-content/uploads/2023/01/Inclusion4All-HR-Training-Toolkit-English-version-nov22.pdf',
+      },
+      {
+        id: 'gender-diversity-in-the-workplace',
+        title: 'Gender diversity in the workplace',
+        description:
+          'A toolkit to help employers support trans and non-binary people at work.',
+        audience: 'hr',
+        category: 'Toolkit',
+        href: 'https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/assets/resources/2023-Workplace-Equality-Transgender-Toolkit-PDF-For-Employers.pdf',
+      },
+      {
+        id: 'equal-workplaces-equal-rights',
+        title: 'Equal workplaces equal rights',
+        description:
+          'Practical steps to make hiring and work more accessible for LGBTQ+ people.',
+        audience: 'hr',
+        category: 'Guide',
+        href: 'https://www.stonewall.org.uk//uploads/files/Stonewall-Equal-Workplaces-Equal-Rights-Best-Practice-Guide.pdf',
       },
     ],
   },
