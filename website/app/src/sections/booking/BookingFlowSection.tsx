@@ -79,6 +79,13 @@ export function BookingFlowSection({
       return
     }
 
+    if (
+      window.matchMedia('(min-width: 1024px)')
+        .matches
+    ) {
+      return
+    }
+
     const panel = stepPanelRef.current
 
     if (!panel) {

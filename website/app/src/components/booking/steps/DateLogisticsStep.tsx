@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { BookingCombobox, BookingTextInput } from '@/components/booking/BookingFormFields'
+import { BookingCombobox, BookingTextInput, BookingTextarea } from '@/components/booking/BookingFormFields'
 import { BookingStepNavigation } from '@/components/booking/BookingStepNavigation'
 import {
   COUNTRY_OPTIONS,
@@ -124,6 +124,19 @@ export function DateLogisticsStep({
           error={errors.city}
           required
           disabled={!hasSelectedCountry}
+        />
+      </div>
+
+      <div className="mt-5">
+        <BookingTextarea
+          id="additionalInformation"
+          label="Additional information"
+          value={formData.additionalInformation}
+          onChange={(value) =>
+            onChange('additionalInformation', value)
+          }
+          placeholder="Anything else we should know about the venue, timing or setup."
+          rows={4}
         />
       </div>
 

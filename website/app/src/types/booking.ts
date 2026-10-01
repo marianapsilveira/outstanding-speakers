@@ -18,6 +18,7 @@ export type BookingRequestForm = {
   unitOrFloor: string
   streetAddress: string
   accessibilityNeeds: string
+  additionalInformation: string
 
   messageToSpeaker: string
 }
@@ -52,6 +53,7 @@ export type BookingRequestPayload = {
     }
 
     accessibilityNeeds: string | null
+    additionalInformation: string | null
   }
 
   messageToSpeaker: string | null
@@ -402,6 +404,7 @@ export function createEmptyBookingForm(): BookingRequestForm {
     unitOrFloor: '',
     streetAddress: '',
     accessibilityNeeds: '',
+    additionalInformation: '',
     messageToSpeaker: '',
   }
 }

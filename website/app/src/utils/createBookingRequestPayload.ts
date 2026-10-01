@@ -68,6 +68,10 @@ export function createBookingRequestPayload(
       accessibilityNeeds:
         formData.accessibilityNeeds.trim() ||
         null,
+
+      additionalInformation:
+        formData.additionalInformation.trim() ||
+        null,
     },
 
     messageToSpeaker:
